@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sangguniang Bayan of Kauswagan - Official Digital Bulletin Board</title>
+<style>body{margin:0}</style></head><body>
+<div id="sbk">
+<style>
+#sbk{--navy:#12284c;--navy2:#1d3a6b;--gold:#c8a22a;--goldl:#f6edcf;--bg:#f2f4f8;--ink:#1c2433;--mute:#5b6577;--line:#d9dee8;
+font-family:"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5;min-height:600px;font-size:clamp(15px,1.5vw,16px)}
+#sbk *{box-sizing:border-box}
+#sbk a{color:inherit}
+#sbk h1,#sbk h2,#sbk h3{font-family:Georgia,"Times New Roman",serif;margin:0;line-height:1.25}
+#sbk .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(12px,3vw,24px)}
+#sbk header{background:var(--navy);color:#fff;border-bottom:4px solid var(--gold)}
+#sbk .top{display:flex;align-items:center;gap:clamp(10px,2vw,18px);padding:14px 0}
+#sbk .logo{width:clamp(48px,8vw,72px);height:clamp(48px,8vw,72px);border-radius:50%;border:2px solid var(--gold);background:#fff2 center/cover;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--gold);flex:none;text-align:center}
+#sbk .titles{flex:1;min-width:0}
+#sbk .titles h1{font-size:clamp(17px,3.2vw,28px);letter-spacing:.02em}
+#sbk .titles .sub{color:var(--gold);font-weight:600;font-size:clamp(12px,1.8vw,15px)}
+#sbk .titles .des{font-size:12px;opacity:.85}
+#sbk .menubtn{display:none;background:none;border:1px solid var(--gold);color:#fff;padding:8px 12px;border-radius:6px;font-size:15px;cursor:pointer}
+#sbk nav{background:var(--navy2)}
+#sbk nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap}
+#sbk nav button{background:none;border:0;color:#fff;padding:12px 14px;font-size:14px;cursor:pointer;font-family:inherit}
+#sbk nav button:hover{background:#ffffff1a;box-shadow:inset 0 -3px var(--gold)}
+#sbk button:focus-visible,#sbk a:focus-visible,#sbk input:focus-visible,#sbk select:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+#sbk .hero{background:var(--navy);color:#fff;padding:clamp(24px,5vw,48px) 0 clamp(28px,5vw,52px)}
+#sbk .hero h2{font-size:clamp(20px,3.6vw,34px);max-width:780px}
+#sbk .hero p{max-width:680px;opacity:.9;margin:10px 0 20px}
+#sbk .search{display:flex;max-width:720px;background:#fff;border-radius:10px;overflow:hidden;border:3px solid var(--gold)}
+#sbk .search input{flex:1;min-width:0;border:0;padding:14px 16px;font-size:16px;font-family:inherit}
+#sbk .search button{border:0;background:var(--gold);color:var(--navy);font-weight:700;padding:0 20px;cursor:pointer;font-family:inherit}
+#sbk .cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:14px;margin:-26px 0 28px}
+#sbk .cat{background:#fff;border:1px solid var(--line);border-top:5px solid var(--c);border-radius:10px;padding:14px;text-align:left;cursor:pointer;font-family:inherit;box-shadow:0 2px 6px #12284c1a;display:flex;gap:12px;align-items:flex-start}
+#sbk .cat:hover{box-shadow:0 4px 12px #12284c33}
+#sbk .ico{font-size:26px;width:44px;height:44px;border-radius:10px;background:var(--goldl);display:flex;align-items:center;justify-content:center;flex:none}
+#sbk .cat b{display:block;font-size:14px;color:var(--navy)}
+#sbk .cat small{color:var(--mute);display:block;font-size:12.5px}
+#sbk .cat .n{color:var(--c);font-weight:700;font-size:12.5px;margin-top:2px;display:block}
+#sbk .filters{display:flex;flex-wrap:wrap;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:22px}
+#sbk .filters label{font-size:13px;color:var(--mute);display:flex;gap:6px;align-items:center}
+#sbk select{padding:8px;border:1px solid var(--line);border-radius:6px;font-size:14px;font-family:inherit;background:#fff;max-width:100%}
+#sbk .reset{margin-left:auto;background:none;border:1px solid var(--navy);color:var(--navy);padding:8px 12px;border-radius:6px;cursor:pointer;font-family:inherit}
+#sbk section.block{margin-bottom:30px}
+#sbk .bh{display:flex;align-items:center;gap:12px;border-bottom:3px solid var(--c);padding-bottom:8px;margin-bottom:12px;flex-wrap:wrap}
+#sbk .bh h2{font-size:clamp(17px,2.4vw,21px);color:var(--navy)}
+#sbk .bh p{margin:0;color:var(--mute);font-size:13.5px;flex-basis:100%}
+#sbk .bh .cnt{background:var(--navy);color:#fff;border-radius:20px;padding:2px 10px;font-size:12px}
+#sbk .bh .va{margin-left:auto;background:var(--navy);color:#fff;border:0;border-radius:6px;padding:8px 14px;cursor:pointer;font-family:inherit}
+#sbk .list{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:14px}
+#sbk .card{background:#fff;border:1px solid var(--line);border-left:5px solid var(--c);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:6px;box-shadow:0 1px 4px #12284c14}
+#sbk .tag{display:flex;gap:6px;flex-wrap:wrap;align-items:center;font-size:12px}
+#sbk .tag .k{color:var(--c);font-weight:700}
+#sbk .badge{background:var(--gold);color:var(--navy);font-weight:700;border-radius:4px;padding:1px 7px}
+#sbk .st{background:#e6edf8;color:var(--navy);border-radius:4px;padding:1px 7px}
+#sbk .card h3{font-size:16.5px;color:var(--navy)}
+#sbk .num{font-weight:600;font-size:13.5px}
+#sbk .meta{color:var(--mute);font-size:13px}
+#sbk .card p{margin:0;font-size:14px;color:#33405a}
+#sbk .btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+#sbk .btn{padding:9px 14px;border-radius:6px;font-size:14px;text-decoration:none;font-weight:600;border:2px solid var(--navy);background:var(--navy);color:#fff!important}
+#sbk .btn.alt{background:#fff;color:var(--navy)!important}
+#sbk .btn.off{border-color:var(--line);background:#eef0f4;color:var(--mute)!important;cursor:not-allowed;font-weight:400}
+#sbk .empty{background:#fff;border:2px dashed var(--line);border-radius:10px;padding:22px;text-align:center;color:var(--mute)}
+#sbk .news{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:16px}
+#sbk .ncard{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 4px #12284c14}
+#sbk .ncard .img{aspect-ratio:16/9;background:linear-gradient(135deg,var(--navy2),var(--navy)) center/cover;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:12px}
+#sbk .ncard .bd{padding:14px;display:flex;flex-direction:column;gap:6px;flex:1}
+#sbk .ncard h3{font-size:16.5px;color:var(--navy)}
+#sbk footer{background:var(--navy);color:#dfe5f1;border-top:4px solid var(--gold);margin-top:30px;padding:26px 0 14px;font-size:14px}
+#sbk .fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:22px}
+#sbk footer h3{color:var(--gold);font-size:16px;margin-bottom:6px}
+#sbk footer button{display:block;background:none;border:0;color:#dfe5f1;padding:3px 0;cursor:pointer;font-family:inherit;font-size:14px;text-align:left;text-decoration:underline}
+#sbk .copy{border-top:1px solid #ffffff33;margin-top:18px;padding-top:12px;font-size:12.5px}
+#sbk main{padding-bottom:10px}
+#sbk .notice{border-radius:10px;padding:12px 14px;margin-bottom:18px;background:#fff4d6;border:1px solid var(--gold);color:#5a4500;font-size:14px}
+#sbk .notice.info{background:#e6edf8;border-color:var(--navy2);color:var(--navy)}
+#sbk .notice button{margin-left:8px;border:1px solid currentColor;background:none;color:inherit;border-radius:6px;padding:4px 10px;cursor:pointer;font-family:inherit}
+#sbk .loading{text-align:center;padding:50px 10px;color:var(--mute)}
+#sbk .spin{display:inline-block;width:22px;height:22px;border:3px solid var(--line);border-top-color:var(--navy);border-radius:50%;vertical-align:middle;margin-right:10px;animation:sp .9s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){#sbk .spin{animation:none}}
+@media(max-width:720px){#sbk .menubtn{display:block}#sbk nav{display:none}#sbk nav.open{display:block}#sbk nav ul{flex-direction:column}#sbk .reset{margin-left:0}#sbk .search button{padding:0 14px}}
+</style>
+
+<header>
+ <div class="wrap top">
+  <div class="logo" id="sealBox">SEAL</div>
+  <div class="titles">
+   <h1>SANGGUNIANG BAYAN OF KAUSWAGAN</h1>
+   <div class="sub">LANAO DEL NORTE</div>
+   <div class="des">OFFICIAL DIGITAL BULLETIN BOARD</div>
+  </div>
+  <div class="logo" id="sbLogoBox">SB</div>
+  <button class="menubtn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button>
+ </div>
+</header>
+<nav id="mainNav" aria-label="Main navigation"><div class="wrap"><ul id="navList"></ul></div></nav>
+
+<div class="hero">
+ <div class="wrap">
+  <h2>Welcome to the Official Digital Bulletin Board of the Sangguniang Bayan of Kauswagan, Lanao del Norte.</h2>
+  <p>Your online access to official legislative documents, public notices, municipal announcements, and updates from the Sangguniang Bayan.</p>
+  <div class="search" role="search">
+   <input id="q" type="search" placeholder="Search by title, number, or keyword" aria-label="Search documents and announcements" autocomplete="off">
+   <button id="qClear" type="button">Clear</button>
+  </div>
+ </div>
+</div>
+
+<main class="wrap">
+ <div class="cats" id="cats"></div>
+ <div id="notice" class="notice" role="alert" style="display:none"></div>
+ <div class="filters">
+  <label>Category <select id="fCat"></select></label>
+  <label>Year <select id="fYear"></select></label>
+  <button class="reset" id="reset" type="button">Show everything</button>
+ </div>
+ <div id="out"></div>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="fg">
+   <div><h3>Sangguniang Bayan of Kauswagan</h3>Legislative Body of the Municipal Government of Kauswagan, Lanao del Norte, Philippines</div>
+   <div><h3>Contact</h3><span id="fAddr"></span><br><span id="fTel"></span><br><span id="fMail"></span></div>
+   <div><h3>Quick links</h3><span id="fLinks"></span></div>
+  </div>
+  <div class="copy">&copy; <span id="yr"></span> Sangguniang Bayan of Kauswagan, Lanao del Norte. All rights reserved.</div>
+ </div>
+</footer>
+
+<script>
+(function(){
+/* ==================================================================
+   SECTION 1 - CONFIGURATION (fill these in once)
+   Choose ONE data source:
+     A) spreadsheetId  - the long ID in your Google Sheet's address:
+        docs.google.com/spreadsheets/d/<THIS PART>/edit
+        (Sheet must be shared "Anyone with the link: Viewer")
+     B) appsScriptUrl  - the Web App URL from Google Apps Script
+        (recommended: it hides Draft rows from the public. Takes priority.)
+   Never put passwords, API keys, or service-account keys here.
+   ================================================================== */
+var CONFIG = {
+  spreadsheetId: "1EhSaEGW4j3s88A3ZJWmLqWdsd7VfTS1NM-u1ReyXQtw",      // e.g. "1AbCdEfGh..."
+  sheetName: "Documents", // the tab name that holds the records
+  appsScriptUrl: "",      // e.g. "https://script.google.com/macros/s/XXXX/exec"
+  timeoutMs: 12000,       // wait this long before showing the error notice
+  showFolderLinks: false, // true = show an "Open Drive folder" link on each category
+  folders: {              // Google Drive folder share links (must be public to be shown)
+    announcements: "", ordinances: "", resolutions: "", publications: "",
+    contractsAndMOA: "", publicHearings: "", updates: ""
+  }
+};
+var SITE = {
+  sealUrl: "",            // Municipal seal image URL ("" = placeholder)
+  sbLogoUrl: "",          // Sangguniang Bayan logo image URL
+  address: "Municipal Hall, Poblacion, Kauswagan, Lanao del Norte (placeholder)",
+  phone: "Tel: (000) 000-0000 (placeholder)",
+  email: "sb.kauswagan@example.gov.ph (placeholder)",
+  newDays: 30             // "New" badge for items published within this many days
+};
+
+/* ==================================================================
+   SECTION 2 - FALLBACK SAMPLE DATA
+   Shown only if the spreadsheet cannot be reached and no saved copy exists.
+   These are SAMPLES, not real documents. Same fields as the spreadsheet.
+   ================================================================== */
+var FALLBACK_DATA = {
+ announcements: [{title:"SAMPLE: Regular Session Schedule", number:"", date:"2026-11-03", year:"2026", description:"Sample placeholder announcement.", fileUrl:"", imageUrl:"", featured:false}],
+ ordinances: [{title:"SAMPLE: An Ordinance (title to be replaced)", number:"Ordinance No. 2026-001", date:"2026-10-20", year:"2026", description:"Sample placeholder ordinance.", fileUrl:"", imageUrl:"", featured:false}],
+ resolutions: [{title:"SAMPLE: A Resolution (title to be replaced)", number:"Resolution No. 2026-001", date:"2026-10-27", year:"2026", description:"Sample placeholder resolution.", fileUrl:"", imageUrl:"", featured:false}],
+ publications: [{title:"SAMPLE: Published Notice", number:"", date:"2026-09-15", year:"2026", description:"Sample placeholder publication.", fileUrl:"", imageUrl:"", featured:false}],
+ contractsAndMOA: [{title:"SAMPLE: Memorandum of Agreement", number:"MOA No. 2026-001", date:"2026-08-12", year:"2026", description:"Sample placeholder MOA.", fileUrl:"", imageUrl:"", featured:false}],
+ publicHearings: [{title:"SAMPLE: Public Hearing on a Proposed Measure", number:"Hearing No. 2026-001", date:"2026-11-05", year:"2026", description:"Sample placeholder hearing notice.", fileUrl:"", imageUrl:"", featured:false}],
+ updates: [{title:"SAMPLE: Sangguniang Bayan Holds Regular Session", number:"", date:"2026-11-01", year:"2026", description:"Sample placeholder news item.", fileUrl:"", imageUrl:"", featured:false}]
+};
+var DATA = FALLBACK_DATA;
+
+/* ==================================================================
+   SECTION 3 - CATEGORIES
+   The spreadsheet "Category" column must match one of the names or aliases below
+   (capitalization and punctuation are ignored).
+   ================================================================== */
+var CATS = [
+ {key:"announcements",   label:"Announcements",                         single:"Announcement", alias:[],                                   icon:"📢", color:"#b8860b", desc:"Notices and advisories for the public."},
+ {key:"ordinances",      label:"Approved Ordinances",                   single:"Ordinance",    alias:["Ordinances"],                       icon:"📜", color:"#12284c", desc:"Local laws enacted by the Sangguniang Bayan."},
+ {key:"resolutions",     label:"Approved Resolutions",                  single:"Resolution",   alias:["Resolutions"],                      icon:"🖋️", color:"#1d6a96", desc:"Formal expressions of the body's decisions."},
+ {key:"publications",    label:"Publications",                          single:"Publication",  alias:[],                                   icon:"📰", color:"#5b4a9a", desc:"Official publications and legal notices."},
+ {key:"contractsAndMOA", label:"Contracts and Memorandum of Agreements",single:"Contract / MOA",alias:["Contracts and MOA","MOA","Contracts"],icon:"🤝", color:"#2f7d5b", desc:"Copies of signed contracts and MOAs."},
+ {key:"publicHearings",  label:"Subject for Public Hearing",            single:"Public Hearing",alias:["Public Hearings","Public Hearing"], icon:"🏛️", color:"#a33b3b", desc:"Measures open for public hearing."},
+ {key:"updates",         label:"Sangguniang Bayan Updates",             single:"Update",       alias:["Updates","SB Updates"],             icon:"🗞️", color:"#4a6275", desc:"Activities, meetings, and accomplishments."}
+];
+
+/* ====================== ENGINE (no edits needed) ====================== */
+var $ = function(id){return document.getElementById(id);};
+var PREVIEW = 3, expanded = {}, MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function fmt(d){var p=String(d).split("-");if(p.length<3||!MONTHS[+p[1]-1])return esc(d);return MONTHS[+p[1]-1]+" "+(+p[2])+", "+p[0];}
+function isNew(d){var t=new Date(d+"T00:00:00");return !isNaN(t)&&(Date.now()-t)/864e5<=SITE.newDays&&t<=Date.now()+864e5;}
+function safeUrl(u){return /^https?:\/\//i.test(u||"")?u:"";}
+function dlUrl(u){var m=u.match(/drive\.google\.com\/file\/d\/([^\/?#]+)/)||u.match(/[?&]id=([^&]+)/);return m&&/drive\.google\.com/.test(u)?"https://drive.google.com/uc?export=download&id="+m[1]:u;}
+function get(key){var a=DATA[key]||[];return a.slice().sort(function(x,y){return String(y.date).localeCompare(String(x.date));});}
+function all(){var r=[];CATS.forEach(function(c){get(c.key).forEach(function(i){r.push({c:c,i:i});});});return r;}
+function year(i){return String(i.year||String(i.date).slice(0,4));}
+
+function card(c,i){
+  var u=safeUrl(i.fileUrl),h="";
+  h+='<article class="card" style="--c:'+c.color+'"><div class="tag"><span class="k">'+esc(c.single)+'</span>';
+  if(isNew(i.date))h+='<span class="badge">New</span>';
+  if(i.featured)h+='<span class="st">Featured</span>';
+  h+='</div><h3>'+esc(i.title)+'</h3>';
+  if(i.number)h+='<div class="num">'+esc(i.number)+'</div>';
+  h+='<div class="meta">Date: '+fmt(i.date)+'</div>';
+  if(i.description)h+='<p>'+esc(i.description)+'</p>';
+  h+='<div class="btns">';
+  if(u)h+='<a class="btn" href="'+esc(u)+'" target="_blank" rel="noopener">View Document</a><a class="btn alt" href="'+esc(dlUrl(u))+'" target="_blank" rel="noopener">Download PDF</a>';
+  else h+='<span class="btn off" aria-disabled="true">Document not yet available</span>';
+  return h+'</div></article>';
+}
+function ncard(c,i){
+  var u=safeUrl(i.fileUrl),img=imgUrl(i.imageUrl);
+  return '<article class="ncard" style="--c:'+c.color+'"><div class="img"'+(img?' style="background-image:url(\''+esc(img)+'\')"':'')+'>'+(img?'':'Sangguniang Bayan of Kauswagan')+'</div><div class="bd"><div class="tag">'+(isNew(i.date)?'<span class="badge">New</span>':'')+'<span class="meta">'+fmt(i.date)+'</span></div><h3>'+esc(i.title)+'</h3><p>'+esc(i.description)+'</p>'+
+  (u?'<div class="btns"><a class="btn alt" href="'+esc(u)+'" target="_blank" rel="noopener">Read More</a></div>':'')+'</div></article>';
+}
+function render(){
+  var q=$("q").value.trim().toLowerCase(),fc=$("fCat").value,fy=$("fYear").value,out="",total=0;
+  var searching=q||fc||fy;
+  CATS.forEach(function(c){
+    if(fc&&fc!==c.key)return;
+    var items=get(c.key).filter(function(i){
+      if(fy&&year(i)!==fy)return false;
+      if(!q)return true;
+      return [i.title,i.number,i.description,i.status,c.label,c.single,i.date].join(" ").toLowerCase().indexOf(q)>-1;
+    });
+    if(searching&&!items.length)return;
+    total+=items.length;
+    var full=expanded[c.key]||searching,shown=full?items:items.slice(0,PREVIEW);
+    out+='<section class="block" id="sec-'+c.key+'" style="--c:'+c.color+'"><div class="bh"><span class="ico">'+c.icon+'</span><h2>'+esc(c.label)+'</h2><span class="cnt">'+items.length+'</span>';
+    if(!searching&&items.length>PREVIEW)out+='<button class="va" data-va="'+c.key+'">'+(expanded[c.key]?'Show Less':'View All')+'</button>';
+    out+='<p>'+esc(c.desc)+(CONFIG.showFolderLinks&&safeUrl(CONFIG.folders[c.key])?' <a href="'+esc(CONFIG.folders[c.key])+'" target="_blank" rel="noopener">Open Drive folder</a>':'')+'</p></div>';
+    if(!items.length)out+='<div class="empty">No items published yet in this category.</div>';
+    else out+='<div class="'+(c.key==="updates"?"news":"list")+'">'+shown.map(function(i){return c.key==="updates"?ncard(c,i):card(c,i);}).join("")+'</div>';
+    out+='</section>';
+  });
+  if(searching&&!total)out='<div class="empty"><b>No results found.</b><br>Try a different word, check the spelling, or choose "Show everything".</div>';
+  $("out").innerHTML=out;
+  document.querySelectorAll("#sbk [data-va]").forEach(function(b){b.onclick=function(){var k=b.getAttribute("data-va");expanded[k]=!expanded[k];render();};});
+  document.querySelectorAll("#sbk .cat .n").forEach(function(n){var k=n.getAttribute("data-k");n.textContent=get(k).length+" published";});
+}
+function goTo(key){
+  $("q").value="";$("fCat").value="";$("fYear").value="";
+  if(key)expanded[key]=true;render();
+  var el=key?$("sec-"+key):$("cats");
+  if(el&&el.scrollIntoView)el.scrollIntoView({behavior:"smooth",block:"start"});
+  $("mainNav").classList.remove("open");$("menuBtn").setAttribute("aria-expanded","false");
+}
+
+/* ---------- data loading from Google Sheets / Apps Script ---------- */
+var CACHE_KEY="sbk-bulletin-cache-v1";
+function norm(k){return String(k).toLowerCase().replace(/[^a-z0-9]/g,"");}
+function catKey(v){var s=norm(v),k="";if(!s)return"";CATS.forEach(function(c){[c.key,c.label,c.single].concat(c.alias).forEach(function(a){if(norm(a)===s)k=c.key;});});return k;}
+function isoDate(v){v=String(v||"").trim();if(/^\d{4}-\d{2}-\d{2}/.test(v))return v.slice(0,10);var d=new Date(v);if(isNaN(d))return"";return d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2);}
+function driveId(u){var m=String(u||"").match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?[^#]*id=|thumbnail\?id=)([\w-]+)/);return m?m[1]:"";}
+function imgUrl(u){var id=driveId(u);return id?"https://drive.google.com/thumbnail?id="+id+"&sz=w800":safeUrl(u);}
+function parseCSV(t){var rows=[],r=[],f="",q=false,i,c;
+ for(i=0;i<t.length;i++){c=t.charAt(i);
+  if(q){if(c==='"'){if(t.charAt(i+1)==='"'){f+='"';i++;}else q=false;}else f+=c;}
+  else if(c==='"')q=true;
+  else if(c===','){r.push(f);f="";}
+  else if(c==="\n"||c==="\r"){if(c==="\r"&&t.charAt(i+1)==="\n")i++;r.push(f);f="";rows.push(r);r=[];}
+  else f+=c;}
+ if(f!==""||r.length){r.push(f);rows.push(r);}
+ var h=rows.shift()||[];
+ return rows.filter(function(x){return x.join("").trim()!=="";}).map(function(x){var o={};h.forEach(function(k,j){o[k]=x[j]||"";});return o;});}
+function build(rows){var d={},skipped=0;CATS.forEach(function(c){d[c.key]=[];});
+ rows.forEach(function(raw){var r={};Object.keys(raw).forEach(function(k){r[norm(k)]=String(raw[k]==null?"":raw[k]).trim();});
+  if(r.status.toLowerCase()!=="published")return;
+  var k=catKey(r.category);if(!k||!r.title){skipped++;return;}
+  var dt=isoDate(r.datepublished||r.date);
+  d[k].push({id:r.id,title:r.title,number:r.documentnumber||r.number,description:r.description,date:dt,year:r.year||dt.slice(0,4),fileUrl:r.googledrivefileurl||r.fileurl,imageUrl:r.imageurl,featured:/^(true|yes|y|1|x)$/i.test(r.featured)});});
+ if(skipped&&window.console)console.warn("Bulletin board: "+skipped+" published row(s) skipped (unknown Category or empty Title).");
+ return d;}
+function withTimeout(p){return new Promise(function(res,rej){var t=setTimeout(function(){rej(new Error("the request timed out"));},CONFIG.timeoutMs);p.then(function(v){clearTimeout(t);res(v);},function(e){clearTimeout(t);rej(e);});});}
+function notice(msg,type,retry){var n=$("notice");if(!msg){n.style.display="none";return;}n.className="notice "+(type||"");n.innerHTML=esc(msg)+(retry?'<button id="retry" type="button">Try again</button>':"");n.style.display="block";if(retry)$("retry").onclick=load;}
+function buildYears(){var ys={},cur=$("fYear").value;all().forEach(function(r){if(r.i.year)ys[r.i.year]=1;});
+ $("fYear").innerHTML='<option value="">All years</option>'+Object.keys(ys).sort().reverse().map(function(y){return '<option>'+esc(y)+'</option>';}).join("");$("fYear").value=ys[cur]?cur:"";}
+function fetchRows(){
+ var url,fn;
+ if(CONFIG.appsScriptUrl){url=CONFIG.appsScriptUrl;fn=function(r){return r.json().then(function(j){if(j&&j.error)throw new Error(j.error);return j.records||j;});};}
+ else if(CONFIG.spreadsheetId){url="https://docs.google.com/spreadsheets/d/"+encodeURIComponent(CONFIG.spreadsheetId)+"/gviz/tq?tqx=out:csv&sheet="+encodeURIComponent(CONFIG.sheetName);fn=function(r){return r.text().then(parseCSV);};}
+ else return Promise.reject(new Error("NOCONFIG"));
+ return withTimeout(fetch(url).then(function(r){if(!r.ok)throw new Error("server replied "+r.status);return fn(r);}));}
+function load(){
+ $("out").innerHTML='<div class="loading" role="status"><span class="spin"></span>Loading documents...</div>';
+ fetchRows().then(function(rows){
+   DATA=build(rows);notice("");
+   try{localStorage.setItem(CACHE_KEY,JSON.stringify({t:Date.now(),d:DATA}));}catch(e){}
+ }).catch(function(e){
+   var c=null;try{c=JSON.parse(localStorage.getItem(CACHE_KEY)||"null");}catch(x){}
+   DATA=c&&c.d?c.d:FALLBACK_DATA;
+   if(e.message==="NOCONFIG")notice("Demo mode: no spreadsheet is connected yet, so sample content is shown.","info");
+   else notice("The latest documents could not be loaded ("+e.message+"). Showing "+(c&&c.d?"the last saved list":"sample content only")+". Please try again later.","warn",true);
+ }).then(function(){buildYears();render();});}
+
+/* build static UI from the data */
+(function init(){
+  if(safeUrl(SITE.sealUrl)){$("sealBox").style.backgroundImage="url('"+SITE.sealUrl+"')";$("sealBox").textContent="";}
+  if(safeUrl(SITE.sbLogoUrl)){$("sbLogoBox").style.backgroundImage="url('"+SITE.sbLogoUrl+"')";$("sbLogoBox").textContent="";}
+  $("fAddr").textContent=SITE.address;$("fTel").textContent=SITE.phone;$("fMail").textContent=SITE.email;
+  $("yr").textContent=new Date().getFullYear();
+  var nav='<li><button data-go="">Home</button></li>',cats="",opts='<option value="">All categories</option>',links="";
+  CATS.forEach(function(c){
+    nav+='<li><button data-go="'+c.key+'">'+esc(c.label.replace("Contracts and Memorandum of Agreements","Contracts & MOA").replace("Sangguniang Bayan Updates","SB Updates").replace("Subject for Public Hearing","Public Hearings").replace("Approved ",""))+'</button></li>';
+    cats+='<button class="cat" style="--c:'+c.color+'" data-go="'+c.key+'"><span class="ico">'+c.icon+'</span><span><b>'+esc(c.label)+'</b><small>'+esc(c.desc)+'</small><span class="n" data-k="'+c.key+'"></span></span></button>';
+    opts+='<option value="'+c.key+'">'+esc(c.label)+'</option>';
+  });
+  links='<button data-go="">Home</button><button data-go="ordinances">Ordinances</button><button data-go="resolutions">Resolutions</button><button data-go="announcements">Announcements</button>';
+  $("navList").innerHTML=nav;$("cats").innerHTML=cats;$("fCat").innerHTML=opts;$("fLinks").innerHTML=links;
+  document.querySelectorAll("#sbk [data-go]").forEach(function(b){b.onclick=function(){goTo(b.getAttribute("data-go"));};});
+  $("q").oninput=render;$("fCat").onchange=render;$("fYear").onchange=render;
+  $("qClear").onclick=function(){$("q").value="";render();$("q").focus();};
+  $("reset").onclick=function(){goTo("");};
+  $("menuBtn").onclick=function(){var o=$("mainNav").classList.toggle("open");$("menuBtn").setAttribute("aria-expanded",o);};
+  load();
+})();
+})();
+</script>
+</div>
+</body></html>
