@@ -11,7 +11,7 @@
 .cat small{color:var(--mute);display:block;font-size:12.5px}
 .cat .n{color:var(--c);font-weight:700;font-size:12.5px;margin-top:2px;display:block}
 
-.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:22px}
+.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:22px;margin-top:22px}
 .filters label{font-size:13px;color:var(--mute);display:flex;gap:6px;align-items:center}
 select{padding:8px;border:1px solid var(--line);border-radius:6px;font-size:14px;font-family:inherit;background:#fff;max-width:100%}
 .reset{margin-left:auto;background:none;border:1px solid var(--navy);color:var(--navy);padding:8px 12px;border-radius:6px;cursor:pointer;font-family:inherit}
