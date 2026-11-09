@@ -2,6 +2,7 @@
 
 Static site (no build step). Open `index.html`, or upload the folder to any web host.
 Note: browsers may block the Google Sheets request on `file://`; use a host or `python3 -m http.server`.
+On Vercel, `vercel.json` enables extension-free URLs. Category links use paths such as `/pages/ordinances`, and the homepage uses `/`.
 
 **Images:** put `municipal-seal.png` and `sb-logo.png` in `assets/images/`. Until then, text placeholders show.
 **Settings:** everything editable is in `assets/js/config.js`. Categories/aliases are in `assets/js/data.js`.

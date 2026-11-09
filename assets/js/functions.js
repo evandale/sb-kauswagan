@@ -13,8 +13,8 @@
   F.safeUrl = function (u) { return /^https?:\/\//i.test(u || "") ? u : ""; };
   /* Site asset: full URLs stay as-is, relative paths are resolved from the site root. */
   F.assetUrl = function (u) { return !u ? "" : (/^https?:\/\//i.test(u) ? u : F.root() + u); };
-  F.pageUrl = function (cat) { return F.root() + "pages/" + cat.page; };
-  F.homeUrl = function () { return F.root() + "index.html"; };
+  F.pageUrl = function (cat) { return F.root() + "pages/" + cat.page.replace(/\.html$/, ""); };
+  F.homeUrl = function () { return F.root(); };
 
   F.fmt = function (d) {
     var p = String(d || "").split("-");
