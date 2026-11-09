@@ -14,8 +14,8 @@ SBK.CONFIG = {
 };
 
 SBK.SITE = {
-  sealUrl: "assets/images/municipal-seal.png", // relative to the site root, or a full https:// URL
-  sbLogoUrl: "assets/images/sb-logo.png",
+  sealUrl: "assets/images/Kauswagan-Logo-400x397.png", // relative to the site root, or a full https:// URL
+  sbLogoUrl: "assets/images/SB-LOGO.png", // relative to the site root, or a full https:// URL
   address: "Municipal Hall, Poblacion, Kauswagan, Lanao del Norte (placeholder)",
   phone: "Tel: (000) 000-0000 (placeholder)",
   email: "sb.kauswagan@example.gov.ph (placeholder)",
