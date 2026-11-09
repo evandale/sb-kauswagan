@@ -19,6 +19,13 @@
     var page = document.body.getAttribute("data-page") || "home";
     var header = F.$("site-header"), nav = F.$("site-nav"), footer = F.$("site-footer");
 
+    if (S.SITE.faviconUrl) {
+      var favicon = document.createElement("link");
+      favicon.rel = "icon";
+      favicon.href = F.assetUrl(S.SITE.faviconUrl);
+      document.head.appendChild(favicon);
+    }
+
     if (header) {
       var top = document.createElement("div");
       top.className = "top";
@@ -50,9 +57,14 @@
         var c = S.CATS.filter(function (x) { return x.key === k; })[0];
         return { href: F.pageUrl(c), text: c.short };
       }));
+      var contactDetails = [S.SITE.address, S.SITE.phone, S.SITE.email].filter(function (value) {
+        return value != null && String(value).trim() !== "";
+      }).map(F.esc).join("<br>");
+      var facebookUrl = F.safeUrl(S.SITE.facebookUrl);
       footer.innerHTML = '<div class="wrap"><div class="fg"><div><h2>Sangguniang Bayan of Kauswagan</h2>Legislative Body of the Municipal Government of Kauswagan, Lanao del Norte, Philippines</div>' +
-        "<div><h2>Contact</h2>" + F.esc(S.SITE.address) + "<br>" + F.esc(S.SITE.phone) + "<br>" + F.esc(S.SITE.email) + "</div>" +
-        "<div><h2>Quick links</h2>" + links.map(function (l) { return '<a href="' + F.esc(l.href) + '">' + F.esc(l.text) + "</a>"; }).join("") + "</div></div>" +
+        "<div><h2>Contact</h2>" + contactDetails + "</div>" +
+        "<div><h2>Quick links</h2>" + links.map(function (l) { return '<a href="' + F.esc(l.href) + '">' + F.esc(l.text) + "</a>"; }).join("") + "</div>" +
+        (facebookUrl ? '<div><h2>Social Media</h2><a href="' + F.esc(facebookUrl) + '" target="_blank" rel="noopener noreferrer">Visit our Facebook page</a></div>' : "") + "</div>" +
         '<div class="copy">&copy; ' + new Date().getFullYear() + " Sangguniang Bayan of Kauswagan, Lanao del Norte. All rights reserved.</div></div>";
     }
 
