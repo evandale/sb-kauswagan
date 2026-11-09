@@ -34,7 +34,7 @@
       url = "https://docs.google.com/spreadsheets/d/" + encodeURIComponent(C.spreadsheetId) + "/gviz/tq?tqx=out:csv&sheet=" + encodeURIComponent(C.sheetName);
       parse = function (r) { return r.text().then(F.parseCSV); };
     } else return Promise.reject(new Error("NOCONFIG"));
-    return withTimeout(fetch(url).then(function (r) { if (!r.ok) throw new Error("server replied " + r.status); return parse(r); }));
+    return withTimeout(fetch(url + (url.indexOf("?") > -1 ? "&" : "?") + "_=" + Date.now(), { cache: "no-store" }).then(function (r){ if (!r.ok) throw new Error("server replied " + r.status); return parse(r); }));
   }
 
   function load(force) {
