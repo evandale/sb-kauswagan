@@ -19,22 +19,40 @@
     if (retry) $("retry").onclick = function () { load(true); };
   }
 
-  function withTimeout(p) {
-    return new Promise(function (res, rej) {
-      var t = setTimeout(function () { rej(new Error("the request timed out")); }, C.timeoutMs);
-      p.then(function (v) { clearTimeout(t); res(v); }, function (e) { clearTimeout(t); rej(e); });
+  function fetchScriptRows(url) {
+    return new Promise(function (resolve, reject) {
+      var callback = "__sbkAppsScript" + Date.now() + Math.floor(Math.random() * 1000000);
+      var script = document.createElement("script"), settled = false, timer;
+      function cleanup() {
+        clearTimeout(timer);
+        delete window[callback];
+        if (script.parentNode) script.parentNode.removeChild(script);
+      }
+      function fail(error) {
+        if (settled) return;
+        settled = true;
+        cleanup();
+        reject(error);
+      }
+      window[callback] = function (data) {
+        if (settled) return;
+        settled = true;
+        cleanup();
+        if (data && data.error) reject(new Error(data.error));
+        else if (data && data.records && typeof data.records.length === "number") resolve(data.records);
+        else reject(new Error("the Apps Script response was invalid"));
+      };
+      script.onerror = function () { fail(new Error("the Apps Script endpoint could not be loaded")); };
+      timer = setTimeout(function () { fail(new Error("the request timed out")); }, C.timeoutMs);
+      script.src = url + (url.indexOf("?") > -1 ? "&" : "?") + "callback=" + encodeURIComponent(callback) + "&_=" + Date.now();
+      document.head.appendChild(script);
     });
   }
   function fetchRows() {
-    var url, parse;
     if (C.appsScriptUrl) {
-      url = C.appsScriptUrl;
-      parse = function (r) { return r.json().then(function (j) { if (j && j.error) throw new Error(j.error); return j.records || j; }); };
-    } else if (C.spreadsheetId) {
-      url = "https://docs.google.com/spreadsheets/d/" + encodeURIComponent(C.spreadsheetId) + "/gviz/tq?tqx=out:csv&sheet=" + encodeURIComponent(C.sheetName);
-      parse = function (r) { return r.text().then(F.parseCSV); };
-    } else return Promise.reject(new Error("NOCONFIG"));
-    return withTimeout(fetch(url + (url.indexOf("?") > -1 ? "&" : "?") + "_=" + Date.now(), { cache: "no-store" }).then(function (r){ if (!r.ok) throw new Error("server replied " + r.status); return parse(r); }));
+      return fetchScriptRows(C.appsScriptUrl);
+    }
+    return Promise.reject(new Error("NOCONFIG"));
   }
 
   function load(force) {

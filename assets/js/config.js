@@ -2,11 +2,9 @@
 window.SBK = window.SBK || {};
 
 SBK.CONFIG = {
-  spreadsheetId: "12_jjX7QOmJAUxbs3MFOikyjj9UQZxcuIfbuw8zImn_g", // Sheet must be shared "Anyone with the link: Viewer"
-  sheetName: "Documents",
+  appsScriptUrl: "https://script.google.com/macros/s/AKfycbwTvBr2BEcQytGAg_XNitBwpCvrZ7sgIvsec77NztdvUS55yMcXJkjNe4J4XsAN4R_XSw/exec",
   requestDocumentUrl: "https://docs.google.com/forms/d/e/1FAIpQLSe5nvspBTuzvlutLozoDP0umtMeNwswGgX3g7SeK_iTelf5RQ/viewform",
   requestDocumentEntry: "673706103",
-  appsScriptUrl: "",        // Optional Apps Script Web App URL (takes priority; hides Draft rows server-side)
   timeoutMs: 12000,
   cacheKey: "sbk-bulletin-cache-v1",
   cacheFreshMs: 0, // reuse a saved copy this long before asking the Sheet again (shared by all pages)

@@ -59,22 +59,6 @@
     if (isNaN(d)) return "";
     return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
   };
-  F.parseCSV = function (t) {
-    var rows = [], r = [], f = "", q = false, i, c;
-    for (i = 0; i < t.length; i++) {
-      c = t.charAt(i);
-      if (q) { if (c === '"') { if (t.charAt(i + 1) === '"') { f += '"'; i++; } else q = false; } else f += c; }
-      else if (c === '"') q = true;
-      else if (c === ",") { r.push(f); f = ""; }
-      else if (c === "\n" || c === "\r") { if (c === "\r" && t.charAt(i + 1) === "\n") i++; r.push(f); f = ""; rows.push(r); r = []; }
-      else f += c;
-    }
-    if (f !== "" || r.length) { r.push(f); rows.push(r); }
-    var h = rows.shift() || [];
-    return rows.filter(function (x) { return x.join("").trim() !== ""; }).map(function (x) {
-      var o = {}; h.forEach(function (k, j) { o[k] = x[j] || ""; }); return o;
-    });
-  };
   F.buildData = function (rows) {
     var d = {}, skipped = 0;
     S.CATS.forEach(function (c) { d[c.key] = []; });
