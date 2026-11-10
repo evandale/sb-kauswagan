@@ -37,6 +37,10 @@
     var m = u.match(/drive\.google\.com\/file\/d\/([^\/?#]+)/) || u.match(/[?&]id=([^&]+)/);
     return m && /drive\.google\.com/.test(u) ? "https://drive.google.com/uc?export=download&id=" + m[1] : u;
   };
+  F.requestUrl = function (i) {
+    var u = F.safeUrl(S.CONFIG.requestDocumentUrl), entry = S.CONFIG.requestDocumentEntry;
+    return u && entry ? u + "?entry." + encodeURIComponent(entry) + "=" + encodeURIComponent(i.number || "") : u;
+  };
 
   /* ---------- spreadsheet data processing ---------- */
   F.norm = function (k) { return String(k).toLowerCase().replace(/[^a-z0-9]/g, ""); };
@@ -101,7 +105,7 @@
 
   /* ---------- card markup ---------- */
   F.card = function (c, i) {
-    var u = i.availability === "Public" ? F.safeUrl(i.fileUrl) : "", requestUrl = F.safeUrl(S.CONFIG.requestDocumentUrl);
+    var u = i.availability === "Public" ? F.safeUrl(i.fileUrl) : "", requestUrl = F.requestUrl(i);
     var h = '<article class="card" style="--c:' + c.color + '"><div class="tag"><span class="k">' + F.esc(c.single) + "</span>";
     if (F.isNew(i.date)) h += '<span class="badge">New</span>';
     if (i.featured) h += '<span class="st">Featured</span>';
