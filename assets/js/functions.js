@@ -83,6 +83,7 @@
       var dt = F.isoDate(r.datepublished || r.date);
       d[k].push({ id: r.id, title: r.title, number: r.documentnumber || r.number, description: r.description, date: dt,
         year: r.year || dt.slice(0, 4), fileUrl: r.googledrivefileurl || r.fileurl, imageUrl: r.imageurl,
+        availability: /^public$/i.test(r.availability) ? "Public" : "Upon Request",
         featured: /^(true|yes|y|1|x)$/i.test(r.featured) });
     });
     if (skipped && window.console) console.warn("Bulletin board: " + skipped + " published row(s) skipped (unknown Category or empty Title).");
@@ -100,7 +101,8 @@
 
   /* ---------- card markup ---------- */
   F.card = function (c, i) {
-    var u = F.safeUrl(i.fileUrl), h = '<article class="card" style="--c:' + c.color + '"><div class="tag"><span class="k">' + F.esc(c.single) + "</span>";
+    var u = i.availability === "Public" ? F.safeUrl(i.fileUrl) : "", requestUrl = F.safeUrl(S.CONFIG.requestDocumentUrl);
+    var h = '<article class="card" style="--c:' + c.color + '"><div class="tag"><span class="k">' + F.esc(c.single) + "</span>";
     if (F.isNew(i.date)) h += '<span class="badge">New</span>';
     if (i.featured) h += '<span class="st">Featured</span>';
     h += "</div><h3>" + F.esc(i.title) + "</h3>";
@@ -109,7 +111,8 @@
     if (i.description) h += "<p>" + F.esc(i.description) + "</p>";
     h += '<div class="btns">';
     if (u) h += '<a class="btn" href="' + F.esc(u) + '" target="_blank" rel="noopener">View Document</a><a class="btn alt" href="' + F.esc(F.downloadUrl(u)) + '" target="_blank" rel="noopener">Download PDF</a>';
-    else h += '<span class="btn off" aria-disabled="true">Document not yet available</span>';
+    else if (requestUrl) h += '<a class="btn" href="' + F.esc(requestUrl) + '" target="_blank" rel="noopener">Request Document</a>';
+    else h += '<span class="btn off" aria-disabled="true">Request link not configured</span>';
     return h + "</div></article>";
   };
   F.newsCard = function (c, i) {

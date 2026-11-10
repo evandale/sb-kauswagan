@@ -7,6 +7,14 @@ On Vercel, `vercel.json` enables extension-free URLs. Category links use paths s
 **Images:** put `municipal-seal.png` and `sb-logo.png` in `assets/images/`. Until then, text placeholders show.
 **Settings:** everything editable is in `assets/js/config.js`. Categories/aliases are in `assets/js/data.js`.
 
+## Updating the Documents sheet
+In the `Documents` tab, add a column with the exact header `Availability` (for example, after `Google Drive File URL`). For each published row:
+- Set `Public` to show the document's view and download links. Make sure `Google Drive File URL` contains the document URL and that its sharing settings allow the intended audience to access it.
+- Set `Upon Request` to show the `Request Document` link to the Google Form.
+- Leave the cell blank to use `Upon Request` by default. Any value other than `Public` also falls back to `Upon Request`.
+
+The Google Form responder URL is configured as `requestDocumentUrl` in `assets/js/config.js`.
+
 ## Notable changes
 - Each category has its own page; header, nav and footer are generated once by `navigation.js`. Active page is marked with `aria-current="page"`.
 - Bug fix: the SB logo never loaded because only `http(s)` URLs were accepted. Local relative paths now work, and missing images fall back to text.

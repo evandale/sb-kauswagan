@@ -4,6 +4,7 @@ window.SBK = window.SBK || {};
 SBK.CONFIG = {
   spreadsheetId: "12_jjX7QOmJAUxbs3MFOikyjj9UQZxcuIfbuw8zImn_g", // Sheet must be shared "Anyone with the link: Viewer"
   sheetName: "Documents",
+  requestDocumentUrl: "https://docs.google.com/forms/d/e/1FAIpQLSe5nvspBTuzvlutLozoDP0umtMeNwswGgX3g7SeK_iTelf5RQ/viewform?usp=publish-editor",
   appsScriptUrl: "",        // Optional Apps Script Web App URL (takes priority; hides Draft rows server-side)
   timeoutMs: 12000,
   cacheKey: "sbk-bulletin-cache-v1",
@@ -25,4 +26,3 @@ SBK.SITE = {
   newDays: 30,              // "New" badge window
   previewCount: 3           // items shown per category on the homepage before "View All"
 };
-
