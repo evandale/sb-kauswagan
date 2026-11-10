@@ -17,7 +17,7 @@ SBK.CONFIG = {
 };
 
 SBK.SITE = {
-  heroImageUrl: "assets/images/hero-banner.jpg", // optional banner image; leave empty to use the solid-color hero
+  heroImageUrl: "assets/images/hero-banner.png", // optional banner image; leave empty to use the solid-color hero
   faviconUrl: "assets/images/SB-LOGO.png", // relative to the site root, or a full https:// URL
   sealUrl: "assets/images/Kauswagan-Logo-400x397.png", // relative to the site root, or a full https:// URL
   sbLogoUrl: "assets/images/SB-LOGO.png", // relative to the site root, or a full https:// URL
