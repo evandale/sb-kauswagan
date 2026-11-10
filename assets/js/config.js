@@ -2,7 +2,7 @@
 window.SBK = window.SBK || {};
 
 SBK.CONFIG = {
-  spreadsheetId: "1EhSaEGW4j3s88A3ZJWmLqWdsd7VfTS1NM-u1ReyXQtw", // Sheet must be shared "Anyone with the link: Viewer"
+  spreadsheetId: "12_jjX7QOmJAUxbs3MFOikyjj9UQZxcuIfbuw8zImn_g", // Sheet must be shared "Anyone with the link: Viewer"
   sheetName: "Documents",
   appsScriptUrl: "",        // Optional Apps Script Web App URL (takes priority; hides Draft rows server-side)
   timeoutMs: 12000,
