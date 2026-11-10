@@ -6,6 +6,7 @@ On Vercel, `vercel.json` enables extension-free URLs. Category links use paths s
 
 **Images:** put `municipal-seal.png` and `sb-logo.png` in `assets/images/`. Until then, text placeholders show.
 **Settings:** everything editable is in `assets/js/config.js`. Categories/aliases are in `assets/js/data.js`.
+To use an image banner behind the hero text, place an image at `assets/images/hero-banner.jpg` or set `heroImageUrl` in `assets/js/config.js` to another site-relative path or HTTPS URL. If the image cannot be loaded, the hero keeps its solid-color background.
 
 ## Updating the Documents sheet
 In the `Documents` tab, add a column with the exact header `Availability` (for example, after `Google Drive File URL`). For each published row:

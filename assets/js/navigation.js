@@ -18,6 +18,16 @@
   N.init = function () {
     var page = document.body.getAttribute("data-page") || "home";
     var header = F.$("site-header"), nav = F.$("site-nav"), footer = F.$("site-footer");
+    var hero = document.querySelector(".hero");
+
+    if (hero && S.SITE.heroImageUrl) {
+      var banner = new Image();
+      banner.className = "hero-image";
+      banner.alt = "";
+      banner.setAttribute("aria-hidden", "true");
+      banner.onload = function () { hero.insertBefore(banner, hero.firstChild); };
+      banner.src = F.assetUrl(S.SITE.heroImageUrl);
+    }
 
     if (S.SITE.faviconUrl) {
       var favicon = document.createElement("link");
